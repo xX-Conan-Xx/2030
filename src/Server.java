@@ -1,3 +1,4 @@
+import java.util.List;
 public final class Server {
     private final int identifier;
     private final boolean isAvailable;

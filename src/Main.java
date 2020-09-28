@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,5 +10,12 @@ public class Main {
         //System.out.println(new ArriveEvent(new Customer(1, 0.5), Arrays.asList(new Server(1, false, false, 0), new Server(2, true, false, 0))).execute().execute());
         //System.out.println(new ArriveEvent(new Customer(1, 0.5), Arrays.asList(new Server(1, false, true, 5.0), new Server(2, false, false, 10.0))).execute().execute().execute());
         //System.out.println(new ArriveEvent(new Customer(1, 0.5), Arrays.asList(new Server(1, false, true, 5.0), new Server(2, false, true, 10.0))).execute());
+        Scanner sc = new Scanner(System.in);
+
+        int numOfServers = sc.nextInt();
+        
+        while (sc.hasNextDouble()) {
+            double arrivalTime = sc.nextDouble();
+        }
     }
 }

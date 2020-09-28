@@ -1,3 +1,4 @@
+import java.util.List;
 public final class Customer {
     private final int customerID;
     private final double arrivalTime;
