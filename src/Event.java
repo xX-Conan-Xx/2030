@@ -5,7 +5,7 @@ public abstract class Event {
     final Customer customer;
     List<Server> servers;
     public Event(double time, Customer customer, List<Server> servers){
-        this.time = 0;
+        this.time = time;
         this.customer = customer;
         this.servers = servers;
     }

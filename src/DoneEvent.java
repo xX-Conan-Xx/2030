@@ -10,7 +10,7 @@ public class DoneEvent extends Event{
 
     @Override
     public String toString() {
-        return this.time + customer.getCustomerID() + " done serving by " + server.getIdentifier();
+        return String.format("%.3f", super.time) + " " + customer.getCustomerID() + " done serving by " + server.getIdentifier();
     }
 
     @Override

@@ -32,9 +32,9 @@ public final class Server {
             return identifier + " is available";
         }else{
             if(hasWaitingCustomer == false){
-                return identifier + " is busy; available at " + nextAvailableTime;
+                return identifier + " is busy; available at " + String.format("%.3f", nextAvailableTime);
             }else{
-                return identifier + " is busy; waiting customer to be served at " + nextAvailableTime;
+                return identifier + " is busy; waiting customer to be served at " + String.format("%.3f", nextAvailableTime);
             }
         }
     }

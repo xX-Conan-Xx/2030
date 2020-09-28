@@ -9,14 +9,14 @@ public class ArriveEvent extends Event{
 
     @Override
     public String toString() {
-        return this.time + customer.getCustomerID() + " arrives";
+        return String.format("%.3f", this.time) +" " + customer.getCustomerID() + " arrives";
     }
 
     @Override
     public Event execute() {
         for(Server server:servers){
             if(server.isAvailable()==true){
-                return new ServeEvent(customer,servers,server);
+                return new ServeEvent(this.customer,this.servers,server);
             }
         }
 
