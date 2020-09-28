@@ -7,7 +7,7 @@ public class LeaveEvent extends Event{
 
     @Override
     public String toString() {
-        return this.time + customer.getCustomerID() + " leaves";
+        return String.format("%.3f", super.time) + " " + customer.getCustomerID() + " leaves";
     }
 
     @Override

@@ -1,20 +1,20 @@
 import java.util.List;
 
 public class WaitEvent extends Event{
-    private final Server server;
+    private final Server newServer;
     public WaitEvent(Customer customer, List<Server> servers,Server server) {
         super(customer.getArrivalTime(), customer, servers);
-        this.server = server;
-        this.servers.set(servers.indexOf(server),new Server(server.getIdentifier(),true,true, server.getNextAvailableTime()));
+        this.newServer = new Server(server.getIdentifier(),true,true, server.getNextAvailableTime());
+        this.servers.set(servers.indexOf(server),newServer);
     }
 
     @Override
     public String toString() {
-        return this.time + customer.getCustomerID() + " waits to be served by " + server.getIdentifier();
+        return String.format("%.3f", this.time) + " " + customer.getCustomerID() + " waits to be served by " + newServer.getIdentifier();
     }
 
     @Override
     public Event execute() {
-        return null;
+        return new ServeEvent(customer,servers,newServer);
     }
 }

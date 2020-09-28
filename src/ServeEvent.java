@@ -3,7 +3,7 @@ import java.util.List;
 public class ServeEvent extends Event{
     private final Server newServer;
     public ServeEvent( Customer customer, List<Server> servers, Server server) {
-        super(customer.getArrivalTime(), customer, servers);
+        super(Math.max(server.getNextAvailableTime(),customer.getArrivalTime()), customer, servers);
         this.newServer = new Server(server.getIdentifier(),false,false, this.time+1);
         this.servers.set(servers.indexOf(server),newServer);
     }
